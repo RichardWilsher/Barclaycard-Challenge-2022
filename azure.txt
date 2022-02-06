@@ -1,0 +1,3 @@
+server name: 	barclaycardmysql
+admin:		barclaysgroup2
+password: 		ChallengeAccpeted22!

@@ -1,0 +1,15 @@
+/* import fonts */
+@import url('https://stockfont.org/?49831f398746e150754c063b22958f6efec983a8b96e1d689e1943e8f9380077');
+
+* {margin: 0; padding: 0;}
+
+html {font-family: 'Oxygen-Regular', verdana, sans-serif; }
+
+body {background-color: #000;}
+header {background-color: #fdfdfd
+
+; color: rgb(0, 0, 0);
+
+height: 200px;
+
+}
