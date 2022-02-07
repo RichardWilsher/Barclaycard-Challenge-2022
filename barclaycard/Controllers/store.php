@@ -96,6 +96,7 @@ class store {
     public function processing(){
         //$transaction[] = $_SESSION['transaction'];
         $transaction = $_SESSION['transaction'];
+        $transaction['unsigned_field_names'] = '';
         return ['template' => 'payment2.html.php',
         'title' => 'Processing',
         'navElement' => '',

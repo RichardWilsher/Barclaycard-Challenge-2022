@@ -4,20 +4,20 @@
 <head>
 	<link rel="stylesheet" href="styles.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<title>Barclaycard Challenge 22 - <?=$title?></title>
-		<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script>
-	</head>
-
-<body>
+	<title><?=$title ?></title>
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+	<body>
 	<header>
 		<section>
 			<aside>
-				<h3>Opening Hours:</h3>
-				<p>Mon-Fri: 09:00-17:30</p>
-				<p>Sat: 09:00-17:00</p>
-				<p>Sun: Closed</p>
+				<?php foreach($openingHours as $hours){ ?>
+					<p>
+						<?=$hours->text ?>: <?=$hours->times?>
+					</p>
+				<?php }?>
 			</aside>
-			<img src="Logo.jpg" />
+			<img src="/images/logo.png"/>
+
 		</section>
 	</header>
 	<nav>
@@ -30,9 +30,20 @@
 		</ul>
 
 	</nav>
-	<main>
-		<?= $output ?>
+<img src="/images/randombanner.php"/>
+	<main class="admin">
+		<section class="left">
+		<ul>
+			<?=$navElement?>
+		</ul>
+	</section>
+
+	<section class="right">
+
+    <?=$output?>
+	</section>
 	</main>
+
 
 	<footer>
 		<a href="#" class="fa fa-facebook"></a>
