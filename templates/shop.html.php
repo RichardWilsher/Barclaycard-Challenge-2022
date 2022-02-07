@@ -16,8 +16,7 @@
     <p>£ <?=$stockItem->price ?></p>
     <form method="post" action="">
         <input type="hidden" name="id" value="<?=$stockItem->id ?>">
-        <input type="text" name="quantity" value="1">
-        <input type="submit" value="Add" style="margin-left: 0px">
+        <input type="text" name="quantity" value="1"> <input type="submit" value="Add" style="margin-left: 0px">
     </form>
 </p>
 </div>
@@ -27,6 +26,6 @@
 </div>
 
 
-<a href="/store/basket">View basket</a><a href="/store/clearBasket">Clear Basket</a>
+<a href="/store/basket">View basket</a> <a href="/store/clearBasket">Clear Basket</a>
 
 
