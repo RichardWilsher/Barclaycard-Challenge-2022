@@ -10,10 +10,12 @@ class Routes implements \tools\Routes{
         $userTable = new \tools\DatabaseTable($pdo, 'users', 'id');
         $stockTable = new \tools\DatabaseTable($pdo, 'stock', 'id');
 
+
         $controllers = [];
         
         $controllers['store'] = new \barclaycard\Controllers\store($userTable, $stockTable);
         $controllers['admin'] = new \barclaycard\Controllers\admin($userTable, $stockTable);
+        $controllers['stock'] = new \barclaycard\Controllers\stock($stockTable);
         
         return $controllers[$name];
     }

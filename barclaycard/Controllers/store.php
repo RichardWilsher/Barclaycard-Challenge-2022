@@ -49,7 +49,8 @@ class store {
             $tempBasket = [];
         }
         $tempBasket += $_POST;
-        header('location: /store/processing');
+        $_SESSION['basket'] = $tempBasket;
+        header('location: /store/shop');
     }
 
     public function about() {
@@ -108,12 +109,13 @@ class store {
     }
 
     public function basket(){
-        return ['template' => 'payment2.html.php',
+        $basket = $_SESSION['basket'];
+        return ['template' => 'basket.html.php',
         'title' => 'Processing',
         'navElement' => '',
         'openingHours' => [],
         'variables' => [
-            'basket' => $_SESSION['basket']
+            'basket' => $basket
         ]
             ];
     }

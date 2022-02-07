@@ -6,17 +6,15 @@
 <br>
 <br>
 <br>
-<!-- <form action="/user/" method="POST"> -->
+
 <label> ID Number: </label> 
 <input type="text" name = "stock[id]"/>
 <input type="button" name="verify" value="Verify" action="/stock/update"/>
 <input type="button" name="delete" value="Delete" action="/stock/delete"/>
 <br>
-<!-- </form> -->
-<!-- <form action="/stock/search" method="POST"> -->
 <label> Cheese: </label> <input type="text" name = "stock[name]"/>
 <input type="button" name="search" value="Search" />
-<!-- </form> -->
+
 
 <div class="flexbox">
 <table>
