@@ -22,7 +22,35 @@ class stock {
             ];
     }
 
-    public function update() {
+    public function updateSubmit() {
+        // function to display the shopping page
+        $stock = $this->stockTable->update();
+        return ['template' => 'stock.html.php',
+        'title' => 'Stock',
+        'navElement' => '',
+        'openingHours' => [],
+        'variables' => [
+            'stock' => $stock
+        ]
+            ];
+        }
+    }
+
+    public function deleteSubmit() {
+        // function to display the shopping page
+        $stock = $this->stockTable->delete();
+        return ['template' => 'stock.html.php',
+        'title' => 'Stock',
+        'navElement' => '',
+        'openingHours' => [],
+        'variables' => [
+            'stock' => $stock
+        ]
+            ];
+        }
+    }
+
+    public function searchSubmit() {
         // function to display the shopping page
         $stock = $this->stockTable->update();
         return ['template' => 'stock.html.php',

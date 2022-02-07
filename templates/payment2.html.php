@@ -1,25 +1,25 @@
 <?php
 //echo var_dump($transaction);
-	$transaction_uuid = $transaction['transaction_uuid'];
-	$locale = $transaction['locale'];
-	$transaction_type = $transaction['transaction_type'];
-	$reference_number = $transaction['reference_number'];
-	$amount = $transaction['amount'];
-	$currency = $transaction['currency'];
-	$signed_date_time = $transaction['signed_date_time'];	
-	$access_key = $transaction['access_key'];
-	$profile_id = $transaction['profile_id'];
-	$signed_field_names = $transaction['signed_field_names'];
-	$unsigned_field_names = $transaction['unsigned_field_names'];
+	$params['transaction_uuid'] = $transaction['transaction_uuid'];
+	$params['locale'] = $transaction['locale'];
+	$params['transaction_type'] = $transaction['transaction_type'];
+	$params['reference_number'] = $transaction['reference_number'];
+	$params['amount'] = $transaction['amount'];
+	$params['currency'] = $transaction['currency'];
+	$params['signed_date_time'] = $transaction['signed_date_time'];	
+	$params['access_key'] = $transaction['access_key'];
+	$params['profile_id'] = $transaction['profile_id'];
+	$params['signed_field_names'] = $transaction['signed_field_names'];
+	$params['unsigned_field_names'] = $transaction['unsigned_field_names'];
 
-        $SECRET_KEY = "**enter your secret key**";
+        $SECRET_KEY = "9d1b912ddffe4d7badf1fecced06f76e3a88706385a242d0a2ec4fd62a73e3a1c4c707dac98d447aa55a2e2d7a659a8da4db3ec97f3f4f0b8293b0fe8453f5912cfa079df7d9495db625fb92b2824fccf9855fd30a6749509b9c9b1890eca3c008cc8974516043ccb4de57b10bc4c28374ab292a0f534a28b49e312a8bb2a95d";
 	
-	define ('SECRET_KEY', '**enter your secret key**');
+	define ('SECRET_KEY', '9d1b912ddffe4d7badf1fecced06f76e3a88706385a242d0a2ec4fd62a73e3a1c4c707dac98d447aa55a2e2d7a659a8da4db3ec97f3f4f0b8293b0fe8453f5912cfa079df7d9495db625fb92b2824fccf9855fd30a6749509b9c9b1890eca3c008cc8974516043ccb4de57b10bc4c28374ab292a0f534a28b49e312a8bb2a95d');
 	
         
-	foreach($_REQUEST as $parameter_name => $parameter_value) {
+	/*foreach($_REQUEST as $parameter_name => $parameter_value) {
         $params[$parameter_name] = $parameter_value;
-    }
+    }*/
 	
 	function sign ($params) {
 		return signData(buildDataToSign($params), SECRET_KEY);
