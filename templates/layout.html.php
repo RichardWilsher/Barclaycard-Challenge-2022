@@ -8,29 +8,27 @@
 <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
 	<body>
 	<header>
-		<section>
-			<aside>
 				<?php foreach($openingHours as $hours){ ?>
 					<p>
 						<?=$hours->text ?>: <?=$hours->times?>
 					</p>
 				<?php }?>
-			</aside>
-			<img src="/images/logoCheese2.png" href="/"/>
+			
+			<img src="/images/logoCheese2.png" />
 
-		</section>
-	</header>
-	<nav>
+<nav>
 		<ul>
 			<li><a href="/">Home</a></li>
 			<li><a href="/store/shop">Shop</a></li>
 			<li><a href="/store/about">About Us</a></li>
 			<li><a href="/store/contact">Contact us</a></li>
-			<li><a href="/store/login">Admin</a></li>
+			<li><a href="/store/login">Login/Register</a></li>
 		</ul>
 
 	</nav>
-<img src="/images/randombanner.php"/>
+	</header>
+	
+<!-- <img src="/images/randombanner.php"/> -->
 	<main class="admin">
 		<!-- <section class="left">
 		<ul>
