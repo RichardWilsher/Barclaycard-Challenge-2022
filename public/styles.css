@@ -5,11 +5,11 @@
 
 html {font-family: 'Oxygen-Regular', verdana, sans-serif; }
 
-body {background-color: rgb(97, 63, 36);
+body {background-color: rgb(20 20 20);
 background-image: url('image-1.jpg');}
-header {background-color: rgb(37, 35, 35); color: white;
+header {background-color: black; color: white;
 
-height: 200px;
+height: 175px;
 
 }
 
@@ -17,11 +17,11 @@ header img {width: 10vw; float: left; border-radius: 20px; margin-top: 20px;}
 header aside {float: right; margin-top: 15px;}
 header section {width: 1000px; display: block; margin:auto;}
 header h1 {float: left; margin-left: 20px;}
-nav {width: 100%; background-color: rgb(170, 170, 166); overflow: auto;}
+nav {width: 100%; background-color: #BAB8B8; overflow: auto;}
 body > img {width: 100%; display: block;}
 nav ul {width: 1000px; margin: auto; display: block; list-style-type: none;}
 nav ul li {width: 14%; float: left; overflow: auto; text-align: center;}
-nav a {color: white; padding-top: 10px; display: block;}
+nav a {color: rgb(3, 3, 3); padding-top: 10px; display: block;}
 
 
 
@@ -33,7 +33,7 @@ header h1 {font-weight: normal;}
 
 h1 { font-size:4em; color: white; text-align: center; padding-top: 20px; text-shadow: 2px 2px 2px #000;}
 
-main {min-height: 75vh; background: #3b3b3b; width: 70vw; display: block; margin: auto; box-shadow: 0px 0px 10px #888; color:#444;}
+main {min-height: 75vh; background: #555; width: 70vw; display: block; margin: auto; box-shadow: 0px 0px 10px #888; color:rgb(255, 252, 46);}
 footer {min-height: 5vh;}
 
 main h2 {font-size:2em;}
@@ -46,7 +46,7 @@ pre {margin-top: 20px;}
 code {background-color: #ccc;}
 pre code {display: block;}
 
-footer {background-color: rgb(170, 170, 166); padding: 10px; color: white;}
+footer {background-color: rgb(92, 92, 92); padding: 10px; color: white;}
 
 form select, form label, form input, form textarea {float: left; width: 200px; padding: 10px; margin-top: 20px;}
 form label {clear: left;}
@@ -92,11 +92,11 @@ table td input[type="submit"] {margin: 0; float: right; width: auto; padding: au
 
 .products > img {max-height: 300px;}
 
-a:hover {color: #004225 !important;}
+a:hover {color: #ffe819 !important;}
 
 .right {padding: 20px;}
 
-main h1 {color: #004225;}
+main h1 {color: rgb(214, 164, 0);}
 
 main img {display: block;}
 
