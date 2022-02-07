@@ -39,14 +39,14 @@ class store {
     public function shopSubmit(){
         unset($_POST['submit']);
         if($_POST['quantity'] > 0){
-            $stockItem = $_POST[];
+            $stockItem = $_POST;
         }
         if (isset($_SESSION['basket'])){
             $tempBasket = $_SESSION['basket'];
         } else {
             $tempBasket = [];
         }
-        $tempBasket += $_POST
+        //$tempBasket += $_POST
         header('location: /store/processing');
     }
 
