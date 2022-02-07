@@ -14,7 +14,7 @@ class Routes implements \tools\Routes{
 
         $controllers = [];
         
-        $controllers['store'] = new \barclaycard\Controllers\store($userTable, $stockTable);
+        $controllers['store'] = new \barclaycard\Controllers\store($clientTable, $stockTable);
         $controllers['admin'] = new \barclaycard\Controllers\admin($userTable, $stockTable);
         $controllers['stock'] = new \barclaycard\Controllers\stock($stockTable);
         $controllers['client'] = new \barclaycard\Controllers\client($clientTable);
