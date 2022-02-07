@@ -10,7 +10,8 @@ class Routes implements \tools\Routes{
         $userTable = new \tools\DatabaseTable($pdo, 'admin', 'id');
         $stockTable = new \tools\DatabaseTable($pdo, 'stock', 'id');
         $clientTable = new \tools\DatabaseTable($pdo, 'client', 'id');
-
+        $orderTable = new \tools\DatabaseTable($pdo, 'order', 'id');
+        $permission = new \tools\DatabaseTable($pdo, 'permission', 'id');
 
         $controllers = [];
         

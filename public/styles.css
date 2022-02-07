@@ -14,15 +14,20 @@ height: 175px;
 
 }
 
-header img {width: 10vw; float: left; border-radius: 20px; margin-top: 20px;}
+header img {width: 8vw; float: left; border-radius: 20px; margin-top: 20px;}
 header aside {float: right; margin-top: 15px;}
-header section {width: 1000px; display: block; margin:auto;}
+header section {width: 1000px; display: block; margin:0px;}
 header h1 {float: left; margin-left: 20px;}
-nav {width: 100%; background-color: #BAB8B8; overflow: auto;}
+nav {width: 80%; overflow: auto;}
 body > img {width: 100%; display: block;}
 nav ul {width: 1000px; margin: auto; display: block; list-style-type: none;}
-nav ul li {width: 14%; float: left; overflow: auto; text-align: center;}
+<<<<<<< HEAD
+nav ul li {width: 18%; float: left; overflow: auto; text-align: center;}
 nav a {color: rgb(3, 3, 3); padding-top: 10px; display: block;}
+=======
+nav ul li {width: 14%; float: left; overflow: auto; text-align: center;}
+nav a {color: rgb(255, 255, 255); padding-top: 5vh; display: block;}
+>>>>>>> 4b304b1a263a35b8ccaa11e3ffa9c4c80327a117
 
 
 
@@ -49,11 +54,11 @@ pre code {display: block;}
 
 footer {background-color: rgb(92, 92, 92); padding: 10px; color: white;}
 
-form select, form label, form input, form textarea {float: left; width: 200px; padding: 10px; margin-top: 20px;}
+form select, form label, form input, form textarea {float: left; width: 50px; padding: 10px; margin-top: 20px;}
 form label {clear: left;}
 textarea {height: 100px;}
 form input[type="text"], form input[type="password"], textarea {color: #999; font-family: verdana, sans-serif}
-input[type="submit"] {clear: both; margin-left: 220px; width: 220px;}
+input[type="submit"] { margin-left: 220px; width: 50px;}
 
 
 .left ul {list-style-type: none }
