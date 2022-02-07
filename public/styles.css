@@ -5,7 +5,7 @@
 
 html {font-family: 'Oxygen-Regular', verdana, sans-serif; }
 
-body {background-color: rgb(97, 63, 36);
+body {background-image: rgb(97, 63, 36);
 background-image: url('image-1.jpg');}
 header {background-color: rgb(37, 35, 35); color: white;
 
