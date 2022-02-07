@@ -14,7 +14,7 @@
 					</p>
 				<?php }?>
 			
-			<img src="/images/logoCheese2.png" href="/"/>
+			<img src="/images/logoCheese2.png" />
 
 <nav>
 		<ul>
