@@ -57,5 +57,29 @@ class test {
             ];
     }
 
+    public function payment() {
+        return ['template' => 'payment.html.php',
+        'title' => 'payment',
+        'navElement' => '',
+        'openingHours' => [],
+        'variables' => [
+        ]
+            ];
+    }
+
+    public function paymentSubmit(){
+        header('location: /test/processing');
+    }
+
+    public function processing(){
+        return ['template' => 'payment2.html.php',
+        'title' => 'Processing',
+        'navElement' => '',
+        'openingHours' => [],
+        'variables' => [
+        ]
+            ]; 
+    }
+
 }
 ?>
