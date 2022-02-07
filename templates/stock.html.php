@@ -8,13 +8,13 @@
 <br>
 
 <label> ID Number: </label> 
-<input type="text" name = "stockID"/>
-<input type="button" name="update" value="Update" action="/stock/update"/>
+<input type="text" name = "stock[id]"/>
+<input type="button" name="verify" value="Verify" action="/stock/update"/>
 <input type="button" name="delete" value="Delete" action="/stock/delete"/>
 <br>
 <label> Cheese: </label> <input type="text" name = "stock[name]"/>
 <input type="button" name="search" value="Search" />
-<input type="submit" name="
+
 
 <div class="flexbox">
     <table>
