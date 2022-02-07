@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<link rel="stylesheet" href="styles.css" />
+	<link rel="stylesheet" href="\styles.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title><?=$title ?></title>
 <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
@@ -16,7 +16,7 @@
 					</p>
 				<?php }?>
 			</aside>
-			<img src="/images/logo.png"/>
+			<img src="/images/logoCheese2.png"/>
 
 		</section>
 	</header>

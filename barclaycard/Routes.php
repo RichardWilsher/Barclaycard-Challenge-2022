@@ -7,8 +7,9 @@ class Routes implements \tools\Routes{
         // function to create the DatabaseTable object instances and the Controller instances and return the requested controller
         require '../database.php';
         
-        $userTable = new \tools\DatabaseTable($pdo, 'users', 'id');
+        $userTable = new \tools\DatabaseTable($pdo, 'admin', 'id');
         $stockTable = new \tools\DatabaseTable($pdo, 'stock', 'id');
+        $clientTable = new \tools\DatabaseTable($pdo, 'client', 'id');
 
 
         $controllers = [];
@@ -16,7 +17,9 @@ class Routes implements \tools\Routes{
         $controllers['store'] = new \barclaycard\Controllers\store($userTable, $stockTable);
         $controllers['admin'] = new \barclaycard\Controllers\admin($userTable, $stockTable);
         $controllers['stock'] = new \barclaycard\Controllers\stock($stockTable);
-        
+        $controllers['client'] = new \barclaycard\Controllers\client($clientTable);
+
+
         return $controllers[$name];
     }
     
