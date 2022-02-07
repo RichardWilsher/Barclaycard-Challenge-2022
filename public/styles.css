@@ -21,8 +21,13 @@ header h1 {float: left; margin-left: 20px;}
 nav {width: 80%; overflow: auto;}
 body > img {width: 100%; display: block;}
 nav ul {width: 1000px; margin: auto; display: block; list-style-type: none;}
+<<<<<<< HEAD
 nav ul li {width: 18%; float: left; overflow: auto; text-align: center;}
 nav a {color: rgb(3, 3, 3); padding-top: 10px; display: block;}
+=======
+nav ul li {width: 14%; float: left; overflow: auto; text-align: center;}
+nav a {color: rgb(255, 255, 255); padding-top: 5vh; display: block;}
+>>>>>>> 4b304b1a263a35b8ccaa11e3ffa9c4c80327a117
 
 
 
