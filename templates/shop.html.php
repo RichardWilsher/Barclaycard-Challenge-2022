@@ -14,6 +14,6 @@
 <?php } ?>
 
 
-<a href="/store/basket">View basket</a>
+<a href="/store/basket">View basket</a><a href="/store/clearBasket">Clear Basket</a>
 
 

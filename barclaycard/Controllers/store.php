@@ -133,5 +133,15 @@ class store {
             ];
     }
 
+    public function login(){
+        unset($_SESSION['basket']);
+        header('location: /store/basket');
+    }
+
+    public function clearBasket(){
+        unset($_SESSION['basket']);
+        header('location: /store/shop');
+    }
+
 }
 ?>
