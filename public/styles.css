@@ -6,7 +6,8 @@
 html {font-family: 'Oxygen-Regular', verdana, sans-serif; }
 
 body {background-color: rgb(20 20 20);
-background-image: url('image-1.jpg');}
+background-image: url('images/cheese.jpg');
+background-size: cover;}
 header {background-color: black; color: white;
 
 height: 175px;
