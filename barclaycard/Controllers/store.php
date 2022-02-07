@@ -4,6 +4,8 @@ class store {
     // controller for the car section of the site which is the public facing site
     
     private $userTable;
+    private $stockTable;
+
     public function __construct($userTable, $stockTable) {
         // constructor function to assign all the relevant DatabaseTable objects to the required variables 
         $this->userTable = $userTable;
@@ -46,7 +48,7 @@ class store {
         } else {
             $tempBasket = [];
         }
-        //$tempBasket += $_POST
+        $tempBasket += $_POST;
         header('location: /store/processing');
     }
 
@@ -84,17 +86,35 @@ class store {
     }
 
     public function paymentSubmit(){
+        unset($_POST['submit']);
+        $_SESSION['transaction'] = $_POST;
+        //echo var_dump($_SESSION['transaction']);
+        //echo var_dump($this->transaction);
         header('location: /store/processing');
     }
 
     public function processing(){
+        //$transaction[] = $_SESSION['transaction'];
+        $transaction = $_SESSION['transaction'];
         return ['template' => 'payment2.html.php',
         'title' => 'Processing',
         'navElement' => '',
         'openingHours' => [],
         'variables' => [
+            'transaction' => $transaction
         ]
             ]; 
+    }
+
+    public function basket(){
+        return ['template' => 'payment2.html.php',
+        'title' => 'Processing',
+        'navElement' => '',
+        'openingHours' => [],
+        'variables' => [
+            'basket' => $_SESSION['basket']
+        ]
+            ];
     }
 
 }

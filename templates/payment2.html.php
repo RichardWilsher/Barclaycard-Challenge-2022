@@ -1,15 +1,16 @@
 <?php
-	$transaction_uuid = $_POST['transaction_uuid'];
-	$locale = $_POST['locale'];
-	$transaction_type = $_POST['transaction_type'];
-	$reference_number = $_POST['reference_number'];
-	$amount = $_POST['amount'];
-	$currency = $_POST['currency'];
-	$signed_date_time = $_POST['signed_date_time'];	
-	$access_key = $_POST['access_key'];
-	$profile_id = $_POST['profile_id'];
-	$signed_field_names = $_POST['signed_field_names'];
-	$unsigned_field_names = $_POST['unsigned_field_names'];
+//echo var_dump($transaction);
+	$transaction_uuid = $transaction['transaction_uuid'];
+	$locale = $transaction['locale'];
+	$transaction_type = $transaction['transaction_type'];
+	$reference_number = $transaction['reference_number'];
+	$amount = $transaction['amount'];
+	$currency = $transaction['currency'];
+	$signed_date_time = $transaction['signed_date_time'];	
+	$access_key = $transaction['access_key'];
+	$profile_id = $transaction['profile_id'];
+	$signed_field_names = $transaction['signed_field_names'];
+	$unsigned_field_names = $transaction['unsigned_field_names'];
 
         $SECRET_KEY = "**enter your secret key**";
 	

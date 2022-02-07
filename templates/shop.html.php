@@ -13,6 +13,7 @@
 </p>
 <?php } ?>
 
-<a href="/test/payment">Process Order</a>
+<a href="/store/payment">Process Order</a>
+<a href="/store/basket">View basket</a>
 
 </section>
