@@ -16,7 +16,7 @@
 					</p>
 				<?php }?>
 			</aside>
-			<img src="/images/logoCheese2.png"/>
+			<img src="/images/logoCheese2.png" href="/"/>
 
 		</section>
 	</header>
