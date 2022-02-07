@@ -3,7 +3,7 @@
 
 <head>
 	<link rel="stylesheet" href="/styles.css" />
-	<link rel="stylesheet" href="/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title><?=$title ?></title>
 <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
 	<body>
@@ -16,7 +16,7 @@
 					</p>
 				<?php }?>
 			</aside>
-			<img src="/images/logoCheese2.png"/>
+			<img src="/images/logoCheese2.png" href="/"/>
 
 		</section>
 	</header>
@@ -30,13 +30,13 @@
 		</ul>
 
 	</nav>
-<img src="/images/randombanner.php"/>
+<!-- <img src="/images/randombanner.php"/> -->
 	<main class="admin">
-		<section class="left">
+		<!-- <section class="left">
 		<ul>
-			<?=$navElement?>
+			//$navElement
 		</ul>
-	</section>
+	</section> -->
 
 	<section class="right">
 

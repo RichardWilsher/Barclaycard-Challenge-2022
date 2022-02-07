@@ -6,7 +6,8 @@
 html {font-family: 'Oxygen-Regular', verdana, sans-serif; }
 
 body {background-color: rgb(20 20 20);
-background-image: url('image-1.jpg');}
+background-image: url('images/cheese.jpg');
+background-size: cover;}
 header {background-color: black; color: white;
 
 height: 175px;
@@ -129,3 +130,45 @@ main img {display: block;}
     background: #55ACEE;
     color: white;
   }
+
+
+
+
+
+
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1.5rem;
+    grid-auto-rows: minmax(150px, auto);
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+} /* sets the properties for the grid including the columns on the portfolio page*/
+
+.grid-inner{
+    width: 273px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    height: auto; 
+    z-index: 1;
+    transform: translate(0);
+    
+} /* sets the sizing of the images which will be on the grid */
+
+.description{
+    position: relative;
+    text-align: center;
+    color: black;
+}/* sets the sizing of the descriptions on the portfolio page */
+
+.central{
+    transition: .5s ease;
+    opacity: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+ }/* used to center the description in the middle of the image */
