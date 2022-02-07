@@ -14,6 +14,7 @@ class store {
 
     public function home() {
         // function to display the home page
+        
         $users = $this->userTable->findall();
         return ['template' => 'home.html.php',
         'title' => 'Home',
@@ -144,4 +145,5 @@ class store {
     }
 
 }
+
 ?>
