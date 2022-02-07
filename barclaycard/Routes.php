@@ -8,18 +8,19 @@ class Routes implements \tools\Routes{
         require '../database.php';
         
         $userTable = new \tools\DatabaseTable($pdo, 'users', 'id');
+        $stockTable = new \tools\DatabaseTable($pdo, 'stock', 'id');
 
         $controllers = [];
         
-        $controllers['test'] = new \barclaycard\Controllers\test($userTable);
-        $controllers['admin'] = new \barclaycard\Controllers\admin($userTable);
+        $controllers['store'] = new \barclaycard\Controllers\store($userTable, $stockTable);
+        $controllers['admin'] = new \barclaycard\Controllers\admin($userTable, $stockTable);
         
         return $controllers[$name];
     }
     
     public function getDefaultRoute() {
         // function to return the default route if no route is supplied
-        return 'test/home';
+        return 'store/home';
     }
 
     public function checkLogin($route) {

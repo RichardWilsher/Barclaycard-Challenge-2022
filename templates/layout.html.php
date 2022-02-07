@@ -21,9 +21,9 @@
 	<nav>
 		<ul>
 			<li><a href="/">Home</a></li>
-			<li><a href="/test/shop">Shop</a></li>
-			<li><a href="/test/about">About Us</a></li>
-			<li><a href="/test/contact">Contact us</a></li>
+			<li><a href="/store/shop">Shop</a></li>
+			<li><a href="/store/about">About Us</a></li>
+			<li><a href="/store/contact">Contact us</a></li>
 			<li><a href="/admin/login">Admin</a></li>
 		</ul>
 

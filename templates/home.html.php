@@ -1,4 +1,4 @@
-<p>Welcome to Claire's Cars, Northampton's specialist in classic and import cars.</p>
+<p>Welcome to Phillip's Cheeses, Northamptonshires specialist in cheese.</p>
 <h2> users </h2>
 
 <?php foreach($users as $user){ ?>

@@ -1,12 +1,13 @@
 <?php
 namespace barclaycard\Controllers;
-class test {
+class store {
     // controller for the car section of the site which is the public facing site
     
     private $userTable;
-    public function __construct($userTable) {
+    public function __construct($userTable, $stockTable) {
         // constructor function to assign all the relevant DatabaseTable objects to the required variables 
         $this->userTable = $userTable;
+        $this->stockTable = $stockTable;
     }
 
     public function home() {
@@ -24,14 +25,29 @@ class test {
 
     public function shop() {
         // function to display the shopping page
+        $stock = $this->stockTable->findall();
         return ['template' => 'shop.html.php',
         'title' => 'Our range',
         'navElement' => '',
         'openingHours' => [],
         'variables' => [
-
+            'stock' => $stock
         ]
             ];
+    }
+
+    public function shopSubmit(){
+        unset($_POST['submit']);
+        if($_POST['quantity'] > 0){
+            $stockItem = $_POST[];
+        }
+        if (isset($_SESSION['basket'])){
+            $tempBasket = $_SESSION['basket'];
+        } else {
+            $tempBasket = [];
+        }
+        $tempBasket += $_POST
+        header('location: /store/processing');
     }
 
     public function about() {
@@ -68,7 +84,7 @@ class test {
     }
 
     public function paymentSubmit(){
-        header('location: /test/processing');
+        header('location: /store/processing');
     }
 
     public function processing(){
