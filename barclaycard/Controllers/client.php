@@ -1,49 +1,50 @@
 <?php
 namespace barclaycard\Controllers;
-class stock {
+class client {
     // controller for the car section of the site which is the public facing site
     
-    private $stockTable;
-    public function __construct($stockTable) {
+    private $clientTable;
+    public function __construct($clientTable) {
         // constructor function to assign all the relevant DatabaseTable objects to the required variables 
-        $this->stockTable = $stockTable;
+        $this->clientTable = $clientTable;
     }
 
     public function home() {
         // function to display the home page
-        $stock = $this->stockTable->findAll();
-        return ['template' => 'stock.html.php',
+        $customers = $this->clientTable->findAll();
+        return ['template' => 'customers.html.php',
         'title' => 'Stock',
         'navElement' => '',
         'openingHours' => [],
         'variables' => [
-            'stock' => $stock
+            'customers' => $customers
         ]
             ];
     }
 
     public function updateSubmit() {
         // function to display the shopping page
-        $stock = $this->stockTable->update();
-        return ['template' => 'stock.html.php',
+        $customers = $this->clientTable->update();
+        return ['template' => 'customers.html.php',
         'title' => 'Stock',
         'navElement' => '',
         'openingHours' => [],
         'variables' => [
-            'stock' => $stock
+            'customers' => $customers
         ]
             ];
         }
+    
 
     public function deleteSubmit() {
         // function to display the shopping page
-        $stock = $this->stockTable->delete();
-        return ['template' => 'stock.html.php',
+        $customers = $this->clientTable->delete();
+        return ['template' => 'customers.html.php',
         'title' => 'Stock',
         'navElement' => '',
         'openingHours' => [],
         'variables' => [
-            'stock' => $stock
+            'customers' => $customers
         ]
             ];
         }
@@ -51,15 +52,14 @@ class stock {
 
     public function searchSubmit() {
         // function to display the shopping page
-        $stock = $this->stockTable->update();
-        return ['template' => 'stock.html.php',
+        $customers = $this->clientTable->update();
+        return ['template' => 'customers.html.php',
         'title' => 'Stock',
         'navElement' => '',
         'openingHours' => [],
         'variables' => [
-            'stock' => $stock
+            'customers' => $customers
         ]
             ];
         }
-    
-}
+    }

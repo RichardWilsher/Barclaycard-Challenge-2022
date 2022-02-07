@@ -13,7 +13,7 @@ height: 175px;
 
 }
 
-header img {width: 100px; float: left; background-color: white; border-radius: 20px; margin-top: 20px;}
+header img {width: 10vw; float: left; border-radius: 20px; margin-top: 20px;}
 header aside {float: right; margin-top: 15px;}
 header section {width: 1000px; display: block; margin:auto;}
 header h1 {float: left; margin-left: 20px;}

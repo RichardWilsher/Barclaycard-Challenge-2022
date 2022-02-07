@@ -48,8 +48,9 @@ class store {
         } else {
             $tempBasket = [];
         }
-        $tempBasket += $_POST;
-        header('location: /store/processing');
+        array_push($tempBasket, $_POST);
+        $_SESSION['basket'] = $tempBasket;
+        header('location: /store/shop');
     }
 
     public function about() {
@@ -108,14 +109,38 @@ class store {
     }
 
     public function basket(){
-        return ['template' => 'payment2.html.php',
+        if(isset($_GET['action'])){
+            unset($_SESSION['basket']);
+            $fullBasket = 'empty';
+        } else {
+        $basket = $_SESSION['basket'];
+        $fullBasket = [];
+        foreach($basket as $basketItem){
+            $stockItem = $this->stockTable->find('id',$basketItem['id'])[0];
+            $newItem['name'] = $stockItem->name;
+            $newItem['price'] = $stockItem->price;
+            $newItem['quantity'] = $basketItem['quantity'];
+            array_push($fullBasket,$newItem);
+        }
+    }
+        return ['template' => 'basket.html.php',
         'title' => 'Processing',
         'navElement' => '',
         'openingHours' => [],
         'variables' => [
-            'basket' => $_SESSION['basket']
+            'basket' => $fullBasket
         ]
             ];
+    }
+
+    public function login(){
+        unset($_SESSION['basket']);
+        header('location: /store/basket');
+    }
+
+    public function clearBasket(){
+        unset($_SESSION['basket']);
+        header('location: /store/shop');
     }
 
 }
