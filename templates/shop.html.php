@@ -13,7 +13,7 @@
 </p>
 <?php } ?>
 
-<a href="/store/payment">Process Order</a>
+
 <a href="/store/basket">View basket</a>
 
 

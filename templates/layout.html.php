@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<link rel="stylesheet" href="styles.css" />
+	<link rel="stylesheet" href="/styles.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title><?=$title ?></title>
 <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
@@ -26,7 +26,7 @@
 			<li><a href="/store/shop">Shop</a></li>
 			<li><a href="/store/about">About Us</a></li>
 			<li><a href="/store/contact">Contact us</a></li>
-			<li><a href="/admin/login">Admin</a></li>
+			<li><a href="/store/login">Admin</a></li>
 		</ul>
 
 	</nav>

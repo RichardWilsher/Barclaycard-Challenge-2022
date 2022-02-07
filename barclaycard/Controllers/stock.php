@@ -34,7 +34,7 @@ class stock {
         ]
             ];
         }
-    }
+
 
     public function deleteSubmit() {
         // function to display the shopping page
@@ -48,7 +48,7 @@ class stock {
         ]
             ];
         }
-    }
+    
 
     public function searchSubmit() {
         // function to display the shopping page
@@ -62,4 +62,5 @@ class stock {
         ]
             ];
         }
-    }
+    
+}

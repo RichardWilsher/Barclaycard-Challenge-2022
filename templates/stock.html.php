@@ -17,7 +17,7 @@
 
 
 <div class="flexbox">
-<table>
+    <table>
         <thead>
             <th> ID </th>
             <th>Cheese</th>
@@ -36,5 +36,7 @@
                        
                     </tr>
                 <?php } ?>
-                </table>
-                </div>
+                
+    </table>
+</div>
+
