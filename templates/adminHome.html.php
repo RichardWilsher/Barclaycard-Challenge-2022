@@ -11,17 +11,24 @@
 
     <div class="grid_inner">
      <!-- <img src="/images/cheddar-cheese.jpg" >    -->
-        <input type="button" href="/stock/home">
+     <form action="" method="post">   
+         <input type="button" value="Stock" href="/stock/home">
+         <input type="hidden" value="stock" name="page">
+    </form>
 
     </div>
     <div class="grid_inner">
+    <form action="" method="post">   
      <!-- <img src="/images/cheddar-cheese.jpg" >    -->
-        <input type="button" href="/client/home">
-
+        <input type="button" value="customers" href="/client/home">
+        <input type="hidden" value="customers" name="page">
+</form>
     </div>
     <div class="grid_inner">
+    <form action="" method="post">   
      <!-- <img src="/images/cheddar-cheese.jpg" >    -->
-        <input type="button" href="/store/add">
-
+        <input type="button" value="stores" href="/store/add">
+        <input type="hidden" value="stores" name="page">
+</form>
     </div>
 

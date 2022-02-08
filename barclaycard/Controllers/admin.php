@@ -26,18 +26,20 @@ class admin {
             ];
         }
         else {
-            return ['template' => 'adminLogin.html.php',
+            header('location: /admin/adminHome');
+            /*return ['template' => 'adminLogin.html.php',
                 'title' => 'Admin Login',
                 'navElement' => '',
                 'openingHours' => [],
                 'variables' => []
-            ];
+            ];*/
         }
     }
 
     public function loginSubmit(){
         // function to process when the submit button is pressed on the login page
-        $username = $_POST['name'];
+        if (!isset($_SESSION['loggedin'])){
+            $username = $_POST['name'];
         $password = $_POST['password'];
         if($this->usersTable->login($username, $password, 'name') == 1){
             // sends the username and password to the login function in DatabaseTable, if it returns 1, stores the id of the user in the $_SESSION as well as loggedin true
@@ -46,6 +48,18 @@ class admin {
             $_SESSION['id'] = $user->id;
         }
         header('location: /admin/login');
+        } else {
+            echo var_dump($_POST);
+            if($_POST['page']=='stock'){
+                header('location: /stock/home');
+            } else {
+                if($_POST['page']=='customers'){
+                    header('location: /client/home');
+                } else {
+                    header('location: /store/home');
+                }
+            }
+        }
     }
 
     public function logout(){
@@ -114,6 +128,28 @@ class admin {
         } else {
             // if there are errors redirect back to the page and display the errors
             header('location: /admin/adminregister?errors=' . $errors);
+        }
+    }
+
+    public function adminHome(){
+        return ['template' => 'adminHome.html.php',
+            'title' => 'Admin Login',
+            'navElement' => '',
+            'openingHours' => [],
+            'variables' => []
+        ];
+    }
+
+    public function adminHomeSubmit(){
+        echo var_dump($_POST);
+        if($_POST['page']=='stock'){
+            header('location: /stock/home');
+        } else {
+            if($_POST['page']=='customers'){
+                header('location: /client/home');
+            } else {
+                header('location: /store/home');
+            }
         }
     }
 }
