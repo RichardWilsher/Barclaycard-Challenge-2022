@@ -2,7 +2,7 @@
 
 <?php 
     $totalPrice = 0;
-    if($basket != 'empty'){
+    if(!isset($_SESSION['basket'])){
 
     foreach($basket as $basketItem){ ?>
     <p><h3><?=$basketItem['name'] ?></h3>
@@ -26,7 +26,7 @@ $params['locale'] = 'en';
 $params['transaction_type'] = 'authorization';
 $params['reference_number'] = 'Ref_No ' . gmdate("d-m-Y\H:i:s\Z");
 //echo $params['reference_number'];
-$params['amount'] = $subTotal . '.00';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    echo $params['amount'];
+$params['amount'] = $totalPrice . '.00';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    echo $params['amount'];
 $params['currency'] = 'GBP';
 $params['signed_date_time'] = gmdate("Y-m-d\TH:i:s\Z");
 $params['access_key'] = 'b3bc8960b6ae36aabe6c4781103f1242';
