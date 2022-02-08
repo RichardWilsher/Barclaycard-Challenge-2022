@@ -134,6 +134,10 @@ class store {
             ];
     }
 
+    public function return(){
+        echo var_dump($_POST);
+    }
+
     public function login(){
         if (isset($_SESSION['loggedin'])){
             $user = $this->clientTable->find('id',$_SESSION['id'])[0];

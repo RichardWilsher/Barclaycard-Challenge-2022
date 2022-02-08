@@ -28,7 +28,7 @@ $params['reference_number'] = 'Ref_No ' . gmdate("d-m-Y\H:i:s\Z");
 //echo $params['reference_number'];
 $params['amount'] = $subTotal . '.00';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    echo $params['amount'];
 $params['currency'] = 'GBP';
-$params['signed_date_time'] = gmdate("d-m-Y\H:i:s\Z");
+$params['signed_date_time'] = gmdate("Y-m-d\TH:i:s\Z");
 $params['access_key'] = 'b3bc8960b6ae36aabe6c4781103f1242';
 $params['profile_id'] = '08957946-C17E-41D5-A145-7B3FB5F40D4D';
 $params['signed_field_names'] = 'access_key,amount,currency,locale,profile_id,reference_number,signed_date_time,signed_field_names,transaction_type,transaction_uuid';
@@ -59,7 +59,7 @@ function commaSeparate ($dataToSign) {
 
 ?> 
 
-<form method="post" action="https://testsecureacceptance.cybersource.com/pay" name="GatewayPush">
+<form method="post" action="https://testsecureacceptance.cybersource.com/pay" name="GatewayPush"> 
 
     <?php foreach($params as $parameter_name => $parameter_value) {
             echo "<input type=\"hidden\" id=\"" . $parameter_name . "\" name=\"" . $parameter_name . "\" value=\"" . $parameter_value . "\"/>\n";
