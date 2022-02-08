@@ -5,11 +5,13 @@ class store {
     
     private $clientTable;
     private $stockTable;
+    private $permissionTable;
 
-    public function __construct($clientTable, $stockTable) {
+    public function __construct($clientTable, $stockTable, $permissionTable) {
         // constructor function to assign all the relevant DatabaseTable objects to the required variables 
         $this->clientTable = $clientTable;
         $this->stockTable = $stockTable;
+        $this->permissionTable = $permissionTable;
     }
 
     public function home() {
@@ -56,12 +58,14 @@ class store {
     }
 
     public function about() {
+        $permission = $this->permissionTable->findall();
         // function to display the About page
         return ['template' => 'about.html.php',
         'title' => 'About us',
         'navElement' => '',
         'openingHours' => [],
         'variables' => [
+            'permission' => $permission
 
         ]
             ];
@@ -244,6 +248,22 @@ class store {
         header('location: /store/shop');
     }
 
+
+
+public function add(){
+    return ['template' => 'storeEdit.html.php',
+        'title' => 'add Store',
+        'navElement' => '',
+        'openingHours' => [],
+        'variables' => [
+
+        ]
+            ];
 }
 
+public function addSubmit(){
+    $this->permissionTable->save($_POST['permission']);
+    header('location: /login/home'); 
+}
+}
 ?>

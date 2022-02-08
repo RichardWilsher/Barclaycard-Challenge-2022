@@ -10,7 +10,9 @@
                 <!-- Sets the image on the page to fit on the grid-->
 <?php foreach($stock as $stockItem){ ?>
     <div class="grid_inner">
+     <!-- <img src="/images/cheddar-cheese.jpg" >    -->
 <p>
+    
     <h3><?=$stockItem->name ?></h3>
     <p><?=$stockItem->description ?></p>
     <p>£ <?=$stockItem->price ?></p>
