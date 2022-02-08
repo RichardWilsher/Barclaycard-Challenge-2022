@@ -18,7 +18,7 @@ class admin {
         // otherwise displays the login page
         if (isset($_SESSION['loggedin'])){
             $user = $this->usersTable->find('id',$_SESSION['id'])[0];
-            return ['template' => 'login.html.php',
+            return ['template' => 'adminHome.html.php',
                 'title' => 'Admin Area',
                 'navElement' => $this->navElement,
                 'openingHours' => $this->lookupOpeningHours(),
@@ -26,7 +26,7 @@ class admin {
             ];
         }
         else {
-            return ['template' => 'login.html.php',
+            return ['template' => 'adminLogin.html.php',
                 'title' => 'Admin Login',
                 'navElement' => '',
                 'openingHours' => [],
@@ -54,5 +54,66 @@ class admin {
         unset($_SESSION['id']);
         header('location: /admin/login');
     }
+    public function register(){
+        $user = [];
+        if (isset($_GET['errors'])){
+            $errors = $_GET['errors'];
+        } else {
+            $errors = 0;
+        }
+        return ['template' => 'register.html.php',
+        'title' => 'Login/Register',
+        'navElement' => '',
+        'openingHours' => [],
+        'variables' => [
+            'user' => $user,
+            'errors' => $errors
+        ]
+            ];
+    }
 
+    public function validateRegistration($user,$checkPassword) {
+        // function to validate the user input when adding a new user or editing a users details
+        $errors = 0;
+
+        if ($user['name'] == '') {
+            $errors = 1;
+        }
+        if ($user['password'] == '') {
+            if ($errors ==0){
+                $errors = 2;
+            } else {
+                $errors = 3;
+            }
+        } 
+        if ($user['password'] != $checkPassword){
+            $errors = 4;
+        }
+
+        return $errors;
+        }
+
+    public function registerSubmit(){
+        unset($_POST['submit']);
+        $checkPassword = $_POST['password2'];
+        unset($_POST['password2']);
+        $user = $_POST;
+        // validate the users input to ensure the username and password are not left blank
+        $errors = $this->validateRegistration($user,$checkPassword);
+        if ($errors == 0) {
+            // add or update the user to the database
+            $hash = password_hash($user['password'], PASSWORD_DEFAULT);
+            $user['password'] = $hash;
+
+            if ($user['id'] == ''){
+                $user['id'] = null;
+            }
+
+            $this->clientTable->save($user);
+            header('location: /store/register');
+        } else {
+            // if there are errors redirect back to the page and display the errors
+            header('location: /store/register?errors=' . $errors);
+        }
+    }
 }
