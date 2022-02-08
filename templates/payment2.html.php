@@ -62,7 +62,7 @@
 	<h1>
 		Smartpay Fuse Pre Payment HPP
 	</h1>
-	<form method="post" action="https://testsecureacceptance.cybersource.com/pay" name="GatewayPush">
+<form method="post" action="https://testsecureacceptance.cybersource.com/pay" name="GatewayPush">
 	<table>
 		<col width="180">
 		<col width="180">

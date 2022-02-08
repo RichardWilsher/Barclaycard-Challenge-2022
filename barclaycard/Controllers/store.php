@@ -3,25 +3,25 @@ namespace barclaycard\Controllers;
 class store {
     // controller for the car section of the site which is the public facing site
     
-    private $userTable;
+    private $clientTable;
     private $stockTable;
 
-    public function __construct($userTable, $stockTable) {
+    public function __construct($clientTable, $stockTable) {
         // constructor function to assign all the relevant DatabaseTable objects to the required variables 
-        $this->userTable = $userTable;
+        $this->clientTable = $clientTable;
         $this->stockTable = $stockTable;
     }
 
     public function home() {
         // function to display the home page
         
-        $users = $this->userTable->findall();
+        //$users = $this->clientTable->findall();
         return ['template' => 'home.html.php',
         'title' => 'Home',
         'navElement' => '',
         'openingHours' => [],
         'variables' => [
-            'users' => $users
+           
         ]
             ];
     }
@@ -134,9 +134,106 @@ class store {
             ];
     }
 
+    public function return(){
+        echo var_dump($_POST);
+    }
+
     public function login(){
-        unset($_SESSION['basket']);
-        header('location: /store/basket');
+        if (isset($_SESSION['loggedin'])){
+            $user = $this->clientTable->find('id',$_SESSION['id'])[0];
+        } else {
+            $user = [];
+        }
+        return ['template' => 'login.html.php',
+        'title' => 'Login/Register',
+        'navElement' => '',
+        'openingHours' => [],
+        'variables' => [
+            'user' => $user
+        ]
+            ];
+    }
+
+    public function loginSubmit(){
+    // function to process when the submit button is pressed on the login page
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    if($this->clientTable->login($email, $password) == 1){
+    // sends the username and password to the login function in DatabaseTable, if it returns 1, stores the id of the user in the $_SESSION as well as loggedin true
+        $user = $this->clientTable->find('email', $email)[0];
+        $_SESSION['loggedin'] = true;
+        $_SESSION['id'] = $user->id;
+        }
+        header('location: /store/home');
+    }
+
+    public function logout(){
+        unset($_SESSION['loggedin']);
+        unset($_SESSION['id']);
+        header('location: /store/home');
+    }
+
+    public function register(){
+        $user = [];
+        if (isset($_GET['errors'])){
+            $errors = $_GET['errors'];
+        } else {
+            $errors = 0;
+        }
+        return ['template' => 'register.html.php',
+        'title' => 'Login/Register',
+        'navElement' => '',
+        'openingHours' => [],
+        'variables' => [
+            'user' => $user,
+            'errors' => $errors
+        ]
+            ];
+    }
+
+    public function validateRegistration($user,$checkPassword) {
+        // function to validate the user input when adding a new user or editing a users details
+        $errors = 0;
+
+        if ($user['email'] == '') {
+            $errors = 1;
+        }
+        if ($user['password'] == '') {
+            if ($errors ==0){
+                $errors = 2;
+            } else {
+                $errors = 3;
+            }
+        } 
+        if ($user['password'] != $checkPassword){
+            $errors = 4;
+        }
+
+        return $errors;
+        }
+
+    public function registerSubmit(){
+        unset($_POST['submit']);
+        $checkPassword = $_POST['password2'];
+        unset($_POST['password2']);
+        $user = $_POST;
+        // validate the users input to ensure the username and password are not left blank
+        $errors = $this->validateRegistration($user,$checkPassword);
+        if ($errors == 0) {
+            // add or update the user to the database
+            $hash = password_hash($user['password'], PASSWORD_DEFAULT);
+            $user['password'] = $hash;
+
+            if ($user['id'] == ''){
+                $user['id'] = null;
+            }
+
+            $this->clientTable->save($user);
+            header('location: /store/register');
+        } else {
+            // if there are errors redirect back to the page and display the errors
+            header('location: /store/register?errors=' . $errors);
+        }
     }
 
     public function clearBasket(){

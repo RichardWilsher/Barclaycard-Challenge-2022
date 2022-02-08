@@ -15,7 +15,6 @@
                     </p>
                 <?php }?>
 <img src="/images/logo.png" />
-</header>		
 
 <nav>
         <ul>
@@ -23,10 +22,14 @@
             <li><a href="/store/shop">Shop</a></li>
             <li><a href="/store/about">About Us</a></li>
             <li><a href="/store/contact">Contact us</a></li>
+			<li><a href="/store/basket">Basket</a></li>
             <li><a href="/store/login">Login/Register</a></li>
         </ul>
 
     </nav>
+</header>		
+
+
    
 
 <!-- <img src="/images/randombanner.php"/> -->
