@@ -15,7 +15,6 @@
                     </p>
                 <?php }?>
 <img src="/images/logo.png" />
-</header>		
 
 <nav>
         <ul>
@@ -28,6 +27,9 @@
         </ul>
 
     </nav>
+</header>		
+
+
    
 
 <!-- <img src="/images/randombanner.php"/> -->
