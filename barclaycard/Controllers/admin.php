@@ -27,12 +27,12 @@ class admin {
         }
         else {
             header('location: /admin/adminHome');
-            /*return ['template' => 'adminLogin.html.php',
+            return ['template' => 'adminLogin.html.php',
                 'title' => 'Admin Login',
                 'navElement' => '',
                 'openingHours' => [],
                 'variables' => []
-            ];*/
+            ];
         }
     }
 

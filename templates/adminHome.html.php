@@ -10,25 +10,13 @@
                 <!-- Sets the image on the page to fit on the grid-->
 
     <div class="grid_inner">
-     <!-- <img src="/images/cheddar-cheese.jpg" >    -->
-     <form action="" method="post">   
-         <input type="button" value="Stock" href="/stock/home">
-         <input type="hidden" value="stock" name="page">
-    </form>
 
+        <a href="/stock/home">Stock</a>
     </div>
     <div class="grid_inner">
-    <form action="" method="post">   
-     <!-- <img src="/images/cheddar-cheese.jpg" >    -->
-        <input type="button" value="customers" href="/client/home">
-        <input type="hidden" value="customers" name="page">
-</form>
+    <a href="/client/home">Client</a>
     </div>
     <div class="grid_inner">
-    <form action="" method="post">   
-     <!-- <img src="/images/cheddar-cheese.jpg" >    -->
-        <input type="button" value="stores" href="/store/add">
-        <input type="hidden" value="stores" name="page">
-</form>
+    <a href="/store/home">Store</a>
     </div>
 
