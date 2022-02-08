@@ -48,7 +48,7 @@
     </main>
 
 
-    <footer>
+    <footer id="footer">
         <!-- <a href="#" class="fa fa-facebook"></a>
         <a href="#" class="fa fa-twitter"></a> -->
         &copy; Phillip's Cheeses 2022

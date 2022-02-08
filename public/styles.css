@@ -191,3 +191,10 @@ input{
   width: 5vw;
   text-align: center
 } /* sets the input texts and curved box edges */
+
+#footer {
+  padding: 1rem;
+  position: relative;
+  background-color: rgb(48, 47, 47);
+  color: white;
+}

@@ -37,7 +37,7 @@ $totalPrice = 0;
 <?php } } else {?>
 <h3> your basket is empty</h3> <?php }?>
 
-
+</table>
 <h2>Order Total £<?=$totalPrice?>.00</h2>
 
 <?php
