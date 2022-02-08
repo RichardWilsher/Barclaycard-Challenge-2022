@@ -1,32 +1,52 @@
 <h3>Your Basket</h3>
 
-<?php 
-    $totalPrice = 0;
-    if(!isset($_SESSION['basket'])){
-
-    foreach($basket as $basketItem){ ?>
-    <p><h3><?=$basketItem['name'] ?></h3>
-    <?=$basketItem['quantity'] ?>
-    £<?=$basketItem['price']?>
+<form>
+<label for="collection">Collection</label><br>
+<input type="radio" name="collection" value="Collection">
+<label for="delivery">Delivery</label><br>
+<input type="radio" name="delivery"><br>
+<label for="stores">Collection Store</label><br>
+<select name="stores" onChange(this, 'box)">
+<option>Northampton</option>
+<option>Corby</option>
+<option>Coventry</option>
+</select>
+</form>
+ 
+    
+    <table>
+    <thead>
+    <tr>
+    <th style="width: 10%">Quantity</th>
+    <th style="width: 70%">Description</th>
+    <th style="width: 10%">Price per Unit</th>
+    <th style="width: 10%">Price</th>
+    </tr>
+<?php
+$totalPrice = 0;
+    if(isset($_SESSION['basket'])){
+    foreach($basket as $basketItem){?>
+    <tr>
+    <td><?=$basketItem['quantity'] ?></td>
+    <td><?=$basketItem['name'] ?></td>
+    <td>£<?=$basketItem['price']?></td>
     <?php $subTotal = $basketItem['quantity'] * $basketItem['price'];
     $totalPrice += $subTotal;?>
-     £<?=$subTotal?>
-     </p>
+    <td>£<?=$subTotal?></td>
+    </tr>
 <?php } } else {?>
-<h2> your basket is empty</h2> <?php }?>
+<h3> your basket is empty</h3> <?php }?>
 
 
-<h2>Order Total £<?=$totalPrice?></h2>
+<h2>Order Total £<?=$totalPrice?>.00</h2>
 
-<a href="/store/payment">Process Order</a>
 <?php
 
 $params['transaction_uuid'] = uniqid();
 $params['locale'] = 'en';
 $params['transaction_type'] = 'authorization';
 $params['reference_number'] = 'Ref_No ' . gmdate("d-m-Y\H:i:s\Z");
-//echo $params['reference_number'];
-$params['amount'] = $totalPrice . '.00';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    echo $params['amount'];
+$params['amount'] = $totalPrice . '.00';
 $params['currency'] = 'GBP';
 $params['signed_date_time'] = gmdate("Y-m-d\TH:i:s\Z");
 $params['access_key'] = 'b3bc8960b6ae36aabe6c4781103f1242';

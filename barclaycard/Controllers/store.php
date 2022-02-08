@@ -51,6 +51,7 @@ class store {
         }
         array_push($tempBasket, $_POST);
         $_SESSION['basket'] = $tempBasket;
+        //echo var_dump($_SESSION);
         header('location: /store/shop');
     }
 
@@ -110,12 +111,13 @@ class store {
     }
 
     public function basket(){
+        $fullBasket = [];
         if(isset($_GET['action'])){
             unset($_SESSION['basket']);
-            $fullBasket = 'empty';
+            //$fullBasket = 'empty';
         } else {
-        $basket = $_SESSION['basket'];
-        $fullBasket = [];
+        if (isset($_SESSION['basket'])){
+            $basket = $_SESSION['basket'];
         foreach($basket as $basketItem){
             $stockItem = $this->stockTable->find('id',$basketItem['id'])[0];
             $newItem['name'] = $stockItem->name;
@@ -124,8 +126,9 @@ class store {
             array_push($fullBasket,$newItem);
         }
     }
+    }
         return ['template' => 'basket.html.php',
-        'title' => 'Processing',
+        'title' => 'basket',
         'navElement' => '',
         'openingHours' => [],
         'variables' => [
