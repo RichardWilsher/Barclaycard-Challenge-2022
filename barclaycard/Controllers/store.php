@@ -165,7 +165,7 @@ class store {
     // function to process when the submit button is pressed on the login page
     $email = $_POST['email'];
     $password = $_POST['password'];
-    if($this->clientTable->login($email, $password) == 1){
+    if($this->clientTable->login($email, $password, 'email') == 1){
     // sends the username and password to the login function in DatabaseTable, if it returns 1, stores the id of the user in the $_SESSION as well as loggedin true
         $user = $this->clientTable->find('email', $email)[0];
         $_SESSION['loggedin'] = true;

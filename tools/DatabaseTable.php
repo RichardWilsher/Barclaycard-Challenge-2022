@@ -95,10 +95,10 @@ namespace tools;
             }
         }
 
-        function login($username, $password){
+        function login($username, $password, $field){
             // function to take the user provided username and password and verify them against the database stored 
             // values, including salted passsword
-            $authCheck = $this->find('email',$username);
+            $authCheck = $this->find($field,$username);
             if($authCheck != NULL){
                 if (password_verify($password, $authCheck[0]->password)) {
                     return 1;

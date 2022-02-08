@@ -21,7 +21,7 @@ class admin {
             return ['template' => 'adminHome.html.php',
                 'title' => 'Admin Area',
                 'navElement' => $this->navElement,
-                'openingHours' => $this->lookupOpeningHours(),
+                'openingHours' => [],
                 'variables' => ['user' => $user]
             ];
         }
@@ -37,11 +37,11 @@ class admin {
 
     public function loginSubmit(){
         // function to process when the submit button is pressed on the login page
-        $username = $_POST['username'];
+        $username = $_POST['name'];
         $password = $_POST['password'];
-        if($this->usersTable->login($username, $password) == 1){
+        if($this->usersTable->login($username, $password, 'name') == 1){
             // sends the username and password to the login function in DatabaseTable, if it returns 1, stores the id of the user in the $_SESSION as well as loggedin true
-            $user = $this->usersTable->find('username', $username)[0];
+            $user = $this->usersTable->find('name', $username)[0];
             $_SESSION['loggedin'] = true;
             $_SESSION['id'] = $user->id;
         }
@@ -61,7 +61,7 @@ class admin {
         } else {
             $errors = 0;
         }
-        return ['template' => 'register.html.php',
+        return ['template' => 'adminregister.html.php',
         'title' => 'Login/Register',
         'navElement' => '',
         'openingHours' => [],
@@ -109,11 +109,11 @@ class admin {
                 $user['id'] = null;
             }
 
-            $this->clientTable->save($user);
-            header('location: /store/register');
+            $this->usersTable->save($user);
+            header('location: /admin/login');
         } else {
             // if there are errors redirect back to the page and display the errors
-            header('location: /store/register?errors=' . $errors);
+            header('location: /admin/adminregister?errors=' . $errors);
         }
     }
 }

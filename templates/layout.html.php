@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css%22%3E"/>
+    <script src="script.js"></script>
     <title><?=$title ?></title>
 	
 <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
